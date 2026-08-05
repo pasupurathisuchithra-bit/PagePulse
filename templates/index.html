@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Pulse</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 Page Pulse</h1>
+
+    <p class="subtitle">
+        Website Audit & SEO Analyzer
+    </p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="url"
+            placeholder="Enter website URL (https://example.com)"
+        >
+
+        <button onclick="analyzeWebsite()">
+            Analyze
+        </button>
+
+    </div>
+
+    <div id="loading"></div>
+
+    <div id="result" class="result" style="display:none;">
+
+        <h2>Audit Report</h2>
+
+        <table>
+
+            <tr>
+                <th>HTTP Status</th>
+                <td id="status"></td>
+            </tr>
+
+            <tr>
+                <th>Response Time</th>
+                <td id="time"></td>
+            </tr>
+
+            <tr>
+                <th>Page Title</th>
+                <td id="title"></td>
+            </tr>
+
+            <tr>
+                <th>Meta Description</th>
+                <td id="meta"></td>
+            </tr>
+
+            <tr>
+                <th>H1 Count</th>
+                <td id="h1"></td>
+            </tr>
+
+            <tr>
+                <th>Images Missing ALT</th>
+                <td id="alt"></td>
+            </tr>
+
+            <tr>
+                <th>Word Count</th>
+                <td id="words"></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
